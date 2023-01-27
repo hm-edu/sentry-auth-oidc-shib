@@ -12,6 +12,7 @@ from .constants import ERR_INVALID_RESPONSE, ISSUER
 
 logger = logging.getLogger("sentry.auth.oidc")
 
+
 class FetchUser(AuthView):
     def __init__(self, domains, version, *args, **kwargs):
         self.domains = domains
