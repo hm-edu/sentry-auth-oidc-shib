@@ -1,10 +1,10 @@
 [tool.poetry]
-name = "sentry-auth-oidc"
+name = "sentry-auth-oidc-shib"
 version = "6.0.0"
-description = "OpenID Connect authentication provider for Sentry"
-authors = ["Max Wittig <max.wittig@siemens.com>"]
+description = "OpenID Connect authentication provider for Sentry (Shibboleth)"
+authors = ["Michael Fuchs <michael.fuchs@hm.edu>"]
 license = "Apache 2.0"
-readme = "README.rst"
+readme = "README.md"
 classifiers = [
     "Intended Audience :: Developers",
     "Intended Audience :: System Administrators",

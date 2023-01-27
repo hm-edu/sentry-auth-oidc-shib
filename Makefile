@@ -1,4 +1,4 @@
-SENTRY_VERSION := 22.8.0
+SENTRY_VERSION := 23.1.1
 
 .PHONY: clean develop test
 
