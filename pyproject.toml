@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "sentry-auth-oidc-shib"
-version = "2.0.0"
+version = "3.0.0"
 description = "OpenID Connect authentication provider for Sentry (Shibboleth)"
 authors = ["Michael Fuchs <michael.fuchs@hm.edu>"]
 license = "Apache 2.0"
@@ -16,8 +16,7 @@ packages = [
 ]
 
 [tool.poetry.dependencies]
-python = ">=3.8.1"
-
+python = ">=3.11.8"
 
 [tool.poetry.plugins."sentry.apps"]
 "oidc" = "oidc.apps.Config"
