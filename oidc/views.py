@@ -1,14 +1,11 @@
 import logging
-import requests
+import time
 
-from sentry.auth.view import AuthView, ConfigureView
-from sentry.utils import json
-from sentry.utils.signing import urlsafe_b64decode
-from .constants import (
-    USERINFO_ENDPOINT,
-)
+import requests
+from sentry.auth.view import AuthView
 
 from .constants import ERR_INVALID_RESPONSE, ISSUER
+from .constants import (USERINFO_ENDPOINT)
 
 logger = logging.getLogger("sentry.auth.oidc")
 
@@ -60,7 +57,7 @@ class FetchUser(AuthView):
         return helper.next_step()
 
 
-class OIDCConfigureView(ConfigureView):
+class OIDCConfigureView(AuthView):
     def dispatch(self, request, organization, auth_provider):
         config = auth_provider.config
         if config.get("domain"):
