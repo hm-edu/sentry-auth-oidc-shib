@@ -39,7 +39,15 @@ class FetchUser(AuthView):
                 continue
             return r.json()
 
-    def dispatch(self, request, helper):
+    def dispatch(self, request: HttpRequest, **kwargs) -> Response: # type: ignore
+        if "pipeline" in kwargs:
+            helper = kwargs["pipeline"]
+        elif "helper" in kwargs:
+            helper = kwargs["helper"]
+        else:
+            raise TypeError(
+                f"FetchUser.dispatch() is missing either the `pipeline` or the `helper` keyword argument."
+            )
         data = helper.fetch_state("data")
 
         try:
