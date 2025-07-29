@@ -4,6 +4,7 @@ import logging
 import time
 import requests
 from django.http import HttpRequest
+from rest_framework.response import Response
 
 from sentry.auth.services.auth.model import RpcAuthProvider
 from sentry.auth.view import AuthView
